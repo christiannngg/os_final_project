@@ -26,7 +26,7 @@ def main():
     )
 
     # Define subcommands: scan, processes, quarantine
-    subparsers = parser.add_subparsers(des="command", help="Commands")
+    subparsers = parser.add_subparsers(dest="command", help="Commands")
 
     # ------------------- Scan Command ------------------- #
     scan_parser = subparsers.add_parser("scan", help="Scan for malware")
@@ -112,7 +112,7 @@ def main():
         quarantine_mgnr = QuarantineManager()
 
         if args.list:
-            quarantine_mgnr.list_quarantine_files()
+            quarantine_mgnr.list_quarantined_files()
         elif args.restore is not None:
             quarantine_mgnr.restore_file(args.restore)
         elif args.delete is not None:

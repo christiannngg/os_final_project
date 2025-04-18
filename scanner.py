@@ -14,7 +14,7 @@ class Scanner:
 
     def __init__(self):
         """Initialize the scanner with malware signatures and common settings."""
-        self.signatures_file = os.path.join("signatures", "signatures.db")
+        self.signatures_file = os.path.join("signatures", "signatures.json")
         self.signatures = self.load_signatures()
 
         # Common file extensions used by malware
